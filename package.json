@@ -1,0 +1,23 @@
+{
+  "name": "mssql-appinsight-monitor-func",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efog/mssql-appinsight-monitor-func.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efog/mssql-appinsight-monitor-func/issues"
+  },
+  "homepage": "https://github.com/efog/mssql-appinsight-monitor-func#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "mssql": "^4.1.0"
+  }
+}
