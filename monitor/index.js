@@ -34,6 +34,5 @@ function monitor(context) {
             context.done(err);
             context.error(err);
         });
-    context.done();
 }
 module.exports = monitor;
