@@ -30,7 +30,7 @@ function monitor(context) {
             return _pool.request().query("select * from SalesLT.Address");
         })
         .then((result) => {
-            _pool.close();
+            mssql.close();
         })
         .then((result) => {
             context.done();
