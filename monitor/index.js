@@ -26,13 +26,17 @@ function monitor(context) {
     let _pool = null;
     mssql.connect(options)
         .then((pool) => {
+            context.log("connected");
             _pool = pool;
             return _pool.request().query("select * from SalesLT.Address");
         })
         .then((result) => {
+            context.log("got results");
             mssql.close();
+            return Promise.resolve(result);
         })
         .then((result) => {
+            context.log("connection closed");
             context.done();
         })
         .catch((err) => {
