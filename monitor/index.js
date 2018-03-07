@@ -24,7 +24,7 @@ function monitor(context) {
         }
     };
     let _pool = null;
-    mssql.connect(options)
+    new mssql.ConnectionPool(options).connect()
         .then((pool) => {
             context.log("connected");
             _pool = pool;
