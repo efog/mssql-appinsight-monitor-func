@@ -7,6 +7,28 @@ const sqlDatabase = process.env.MSSQL_DATABASE || "";
 
 const mssql = require("mssql");
 
+let _pool = null;
+
+/**
+ * Gets cuurent function connection pool
+ * 
+ * @param {any} options connection pool options
+ * @return {Promise} get connection pool promise
+ */
+function getPool(options) {
+    const promise = new Promise((resolve, reject) => {
+        if (_pool) {
+            return resolve(_pool);
+        }
+        return mssql.connect(options)
+            .then((pool) => {
+                _pool = pool;
+                return resolve(_pool);
+            });
+    });
+    return promise;
+}
+
 /**
  * Application level monitoring function
  * 
@@ -23,7 +45,7 @@ function monitor(context) {
             "encrypt": true
         }
     };
-    mssql.connect(options)
+    getPool(options)
         .then((pool) => {
             return pool.request().query("select * from SalesLT.Address");
         })
@@ -32,7 +54,6 @@ function monitor(context) {
         })
         .catch((err) => {
             context.done(err);
-            context.error(err);
         });
 }
 module.exports = monitor;
