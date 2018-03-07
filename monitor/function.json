@@ -1,11 +1,9 @@
 {
     "disabled": false,
-    "bindings": [
-        {
-            "name": "monitor",
-            "type": "timerTrigger",
-            "direction": "in",
-            "schedule": "0 */1 * * * *"
-        }
-    ]
+    "bindings": [{
+        "name": "monitor",
+        "type": "timerTrigger",
+        "direction": "in",
+        "schedule": "0 */1 * * * *"
+    }]
 }

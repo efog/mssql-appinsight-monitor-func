@@ -9,7 +9,7 @@ const mssql = require("mssql");
 
 /**
  * Application level monitoring function
- * 
+ *
  * @param {any} context execution context
  * @returns {undefined}
  */
@@ -24,10 +24,14 @@ function monitor(context) {
         }
     };
     let _pool = null;
-    new mssql.ConnectionPool(options).connect()
+    new mssql
+        .ConnectionPool(options)
+        .connect()
         .then((pool) => {
             _pool = pool;
-            return _pool.request().query("select * from SalesLT.Address");
+            return _pool
+                .request()
+                .query("select * from SalesLT.Address");
         })
         .then((result) => {
             mssql.close();

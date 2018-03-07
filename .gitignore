@@ -1,3 +1,7 @@
+# Functions
+local.settings.json
+.vscode
+
 # Logs
 logs
 *.log

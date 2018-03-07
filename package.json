@@ -18,6 +18,8 @@
   "homepage": "https://github.com/efog/mssql-appinsight-monitor-func#readme",
   "dependencies": {
     "bluebird": "^3.5.1",
-    "mssql": "^4.1.0"
+    "eslint": "^4.18.2",
+    "mssql": "^4.1.0",
+    "npm": "^5.7.1"
   }
 }
