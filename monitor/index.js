@@ -24,6 +24,7 @@ function monitor(context) {
         }
     };
     let _pool = null;
+    context.log(`${JSON.stringify(options)}`, options);
     new mssql.ConnectionPool(options).connect()
         .then((pool) => {
             context.log("connected");
