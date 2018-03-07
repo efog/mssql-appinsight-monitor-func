@@ -1,7 +1,7 @@
 const Promise = require("bluebird");
 
 const sqlUsername = process.env.MSSQL_USERNAME || "";
-const sqlPassword = process.env.MSSQL_PASSWORRD || "";
+const sqlPassword = process.env.MSSQL_PASSWORD || "";
 const sqlServer = process.env.MSSQL_SERVER || "";
 const sqlDatabase = process.env.MSSQL_DATABASE || "";
 
